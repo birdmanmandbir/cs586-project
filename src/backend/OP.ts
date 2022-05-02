@@ -57,6 +57,6 @@ export class OP {
   }
   Penalty() {
     const penalty = this.af.createPenalty();
-    penalty.Penalty();
+    penalty.Penalty(this.ds);
   }
 }

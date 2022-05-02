@@ -84,7 +84,8 @@ export class A1_NoFundsMsg extends NoFundsMsg {
   }
 }
 export class A1_Penalty extends Penalty {
-  Penalty() {
-    message.info(`${name} - Penalty...`);
+  Penalty(ds: DataStore) {
+    message.info(`${name} - Penalty by 15`);
+    ds.penalty()
   }
 }

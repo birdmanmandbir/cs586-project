@@ -37,5 +37,5 @@ export class NoFundsMsg{
   NoFundsMsg() {}
 }
 export class Penalty{
-  Penalty() {}
+  Penalty(ds: DataStore) {}
 }

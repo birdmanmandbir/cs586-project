@@ -83,8 +83,4 @@ export class A2_NoFundsMsg extends NoFundsMsg {
     message.error(`${name} - No Funds`);
   }
 }
-export class A2_Penalty extends Penalty {
-  Penalty() {
-    message.info(`${name} - Penalty...`);
-  }
-}
+export class A2_Penalty extends Penalty {}
