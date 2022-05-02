@@ -12,11 +12,6 @@ export default function Account1Panel() {
   const [op, setOP] = useState(new OP(factory.createDataStore(), factory));
   const [m, setM] = useState(new MDAEFSM(op));
   const [s, setState] = useState(m.s);
-  m.setState = (state: State) => {
-    m.s = state;
-    setState(state);
-    console.log('state change to: ', s.constructor.name);
-  };
   const [account1, setAccount1] = useState(new Account1(m, factory.createDataStore()));
   // pin
   const [p, setP] = useState(0);
@@ -30,9 +25,16 @@ export default function Account1Panel() {
   const [d, setD] = useState(0);
   // provides withdraw
   const [w, setW] = useState(0);
+  // provides id
+  const [yy, setYY] = useState(0);
+  factory.createDataStore().setUIBalance = setA;
+  m.setUIState = setState
   return (
     <div className="account1-panel">
-      <div className="header">Current State: {s.constructor.name}</div>
+      <div className="header">
+        <span className="header-item">Current State: {s.constructor.name}</span>
+        <span className="header-item">Current Balance: {a}</span>
+      </div>
       <div className="operation">
         <span>Pin: </span>
         <Input
@@ -56,8 +58,8 @@ export default function Account1Panel() {
       </div>
       <div className="operation">
         <span>Login: </span>
-        <Input value={y} onChange={(e) => setY(Number(e.target.value))}></Input>
-        <Button onClick={() => account1.login(y)}>login</Button>
+        <Input value={yy} onChange={(e) => setYY(Number(e.target.value))}></Input>
+        <Button onClick={() => account1.login(yy)}>login</Button>
       </div>
       <div className="operation">
         <span>Provides pin: </span>

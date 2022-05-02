@@ -14,12 +14,17 @@ export class MDAEFSM {
   S2 = new S2(this);
   locked = new locked(this);
   closed = new closed(this);
-  setState = (s: State) => { this.s = s };
+  setUIState:(s: State) => void;
 
   constructor(op: OP) {
     this.attempts = 0;
     this.op = op;
     this.s = this.start;
+  }
+  setState(s: State) {
+    this.setUIState(s);
+    this.s = s;
+    console.log('state change to: ', s.constructor.name);
   }
   // TODO log cur state better
   Open() {

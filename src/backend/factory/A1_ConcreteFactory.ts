@@ -17,7 +17,7 @@ import {
 } from '../strategy/A1_Strategy';
 
 export class A1_ConcreteFactory implements AbstractFactory {
-  d: DataStore = new DS1();
+  ds: DataStore = new DS1();
   storeData = new A1_StoreData();
   promptForPin = new A1_PromptForPIN();
   displayMenu = new A1_DisplayMenu();
@@ -32,7 +32,7 @@ export class A1_ConcreteFactory implements AbstractFactory {
   noFundsMsg = new A1_NoFundsMsg();
   penalty = new A1_Penalty();
   createDataStore(): DataStore {
-    return this.d;
+    return this.ds;
   }
   createStoreData() {
     return this.storeData;
