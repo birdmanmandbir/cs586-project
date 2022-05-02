@@ -2,7 +2,7 @@ import { Tabs } from 'antd';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css'
-import Account1Panel from './views/Account1';
+import Account1Panel from './views/Account1Panel';
 
 const { TabPane } = Tabs;
 function App() {

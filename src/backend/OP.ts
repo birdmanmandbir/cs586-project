@@ -1,10 +1,10 @@
 import { DataStore } from './DataStore';
 import { AbstractFactory } from './factory/AbstractFactory';
 export class OP {
-  d: DataStore;
+  ds: DataStore;
   af: AbstractFactory;
-  constructor(d: DataStore, af: AbstractFactory) {
-    this.d = d;
+  constructor(ds: DataStore, af: AbstractFactory) {
+    this.ds = ds;
     this.af = af;
   }
   StoreData() {
@@ -21,7 +21,7 @@ export class OP {
   }
   DisplayBalance() {
     const displayBalance = this.af.createDisplayBalance();
-    displayBalance.DisplayBalance();
+    displayBalance.DisplayBalance(this.ds);
   }
   IncorrectIdMsg() {
     const incorrectIdMsg = this.af.createIncorrectIdMsg();

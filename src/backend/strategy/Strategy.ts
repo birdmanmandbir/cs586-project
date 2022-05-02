@@ -1,3 +1,5 @@
+import { DataStore } from "../DataStore";
+
 export class StoreData{
   StoreData() {}
 }
@@ -8,7 +10,7 @@ export class DisplayMenu{
   DisplayMenu() {}
 }
 export class DisplayBalance{
-  DisplayBalance() {}
+  DisplayBalance(ds: DataStore) {}
 }
 export class IncorrectIdMsg{
   IncorrectIdMsg() {}
