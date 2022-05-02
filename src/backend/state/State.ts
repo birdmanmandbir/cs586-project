@@ -129,6 +129,9 @@ export class overdrawn extends State {
   Balance() {
     this.m.op.DisplayBalance();
   }
+  Logout(): void {
+    this.m.setState(this.m.idle);
+  }
 }
 export class S2 extends State {
   AboveMinBalance() {

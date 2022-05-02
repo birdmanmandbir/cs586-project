@@ -18,11 +18,17 @@ export default function Account1Panel() {
     console.log('state change to: ', s.constructor.name);
   };
   const [account1, setAccount1] = useState(new Account1(m, factory.createDataStore()));
+  // pin
   const [p, setP] = useState(0);
+  // id
   const [y, setY] = useState(0);
+  // balance
   const [a, setA] = useState(0);
+  // provides pin
   const [x, setX] = useState(0);
+  // provides deposit
   const [d, setD] = useState(0);
+  // provides withdraw
   const [w, setW] = useState(0);
   return (
     <div className="account1-panel">
