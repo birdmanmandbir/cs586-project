@@ -10,13 +10,15 @@ export default function Account1Panel() {
   const [factory, setFactory] = useState(new A1_ConcreteFactory());
   const [op, setOP] = useState(new OP(factory.createDataStore(), factory))
   const [m, setM] = useState(new MDAEFSM(op))
+  const [s, setState] = useState(m.s)
+  m.setState = setState;
   const [account1, setAccount1] = useState(new Account1(m, factory.createDataStore()))
   const [pin, setPin] = useState(0);
   const [id, setId] = useState(0);
   const [balance, setBalance] = useState(0);
   return (
     <div className="account1-panel">
-      <div className="header">Current State: {m.s.constructor.name}</div>
+      <div className="header">Current State: {s.constructor.name}</div>
       <span>Pin: </span>
       <Input placeholder="input the pin" value={pin} onChange={(e) => { setPin(Number(e.target.value)) }}></Input>
       <span>Id: </span>

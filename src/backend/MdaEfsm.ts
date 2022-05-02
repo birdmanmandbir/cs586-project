@@ -14,6 +14,7 @@ export class MDAEFSM {
   S2 = new S2(this);
   locked = new locked(this);
   closed = new closed(this);
+  setState = (s: State) => { this.s = s };
 
   constructor(op: OP) {
     this.attempts = 0;
