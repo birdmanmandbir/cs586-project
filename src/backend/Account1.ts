@@ -23,7 +23,7 @@ export class Account1 {
         this.m.CorrectPinBelowMinBalance()
       }
     } else {
-      this.m.IncorrectPin(1)
+      this.m.IncorrectPIN(1)
     }
   }
   // deposit amount d

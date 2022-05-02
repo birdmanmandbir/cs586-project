@@ -6,7 +6,7 @@ export class State {
     this.m = m;
   }
   Open() {}
-  IncorectPin(max: number) {}
+  IncorrectPIN(max: number) {}
   CorrectPinAboveMinBalance() {}
   CorrectPinBelowMinBalance() {}
   Balance() {}

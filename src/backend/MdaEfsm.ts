@@ -26,12 +26,11 @@ export class MDAEFSM {
     this.s = s;
     console.log('state change to: ', s.constructor.name);
   }
-  // TODO log cur state better
   Open() {
     this.s.Open();
   }
-  IncorrectPin(max: number) {
-    this.s.IncorectPin(max);
+  IncorrectPIN(max: number) {
+    this.s.IncorrectPIN(max);
   }
   CorrectPinAboveMinBalance() {
     this.s.CorrectPinAboveMinBalance();
