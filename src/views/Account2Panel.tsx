@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import { Button, Input } from 'antd';
 import './Account.css';
-import { Account1 } from '../backend/Account1';
-import { A1_ConcreteFactory } from '../backend/factory/A1_ConcreteFactory';
+import { Account2 } from '../backend/Account2';
+import { A2_ConcreteFactory } from '../backend/factory/A2_ConcreteFactory';
 import { MDAEFSM } from '../backend/MdaEfsm';
 import { OP } from '../backend/OP';
 
-export default function Account1Panel() {
-  const [factory, setFactory] = useState(new A1_ConcreteFactory());
+export default function Account2Panel() {
+  const [factory, setFactory] = useState(new A2_ConcreteFactory());
   const [op, setOP] = useState(new OP(factory.createDataStore(), factory));
   const [m, setM] = useState(new MDAEFSM(op));
   const [s, setState] = useState(m.s);
-  const [account1, setAccount1] = useState(new Account1(m, factory.createDataStore()));
+  const [account2, setAccount1] = useState(new Account2(m, factory.createDataStore()));
   // pin
   const [p, setP] = useState(0);
   // id
@@ -27,9 +27,9 @@ export default function Account1Panel() {
   // provides id
   const [yy, setYY] = useState(0);
   factory.createDataStore().setUIBalance = setA;
-  m.setUIState = setState
+  m.setUIState = setState;
   return (
-    <div className="account1-panel">
+    <div className="account2-panel">
       <div className="header">
         <span className="header-item">Current State: {s.constructor.name}</span>
         <span className="header-item">Current Balance: {a}</span>
@@ -53,33 +53,36 @@ export default function Account1Panel() {
         ></Input>
         <span>Balance: </span>
         <Input placeholder="input the balance" value={a} onChange={(e) => setA(Number(e.target.value))}></Input>
-        <Button onClick={() => account1.open(p, y, a)}>open</Button>
+        <Button onClick={() => account2.OPEN(p, y, a)}>OPEN</Button>
       </div>
       <div className="operation">
         <span>Login: </span>
         <Input value={yy} onChange={(e) => setYY(Number(e.target.value))}></Input>
-        <Button onClick={() => account1.login(yy)}>login</Button>
+        <Button onClick={() => account2.LOGIN(yy)}>LOGIN</Button>
       </div>
       <div className="operation">
         <span>Provides pin: </span>
         <Input value={x} onChange={(e) => setX(Number(e.target.value))}></Input>
-        <Button onClick={() => account1.pin(x)}>pin</Button>
-        <Button onClick={() => account1.lock(x)}>lock</Button>
-        <Button onClick={() => account1.unlock(x)}>unlock</Button>
+        <Button onClick={() => account2.PIN(x)}>PIN</Button>
       </div>
       <div className="operation">
         <span>Deposite: </span>
         <Input value={d} onChange={(e) => setD(Number(e.target.value))}></Input>
-        <Button onClick={() => account1.deposit(d)}>deposit</Button>
+        <Button onClick={() => account2.DEPOSIT(d)}>DEPOSIT</Button>
       </div>
       <div className="operation">
         <span>Withdraw: </span>
         <Input value={w} onChange={(e) => setW(Number(e.target.value))}></Input>
-        <Button onClick={() => account1.withdraw(w)}>withdraw</Button>
+        <Button onClick={() => account2.WITHDRAW(w)}>WITHDRAW</Button>
       </div>
       <div className="operation">
-        <Button onClick={() => account1.balance()}>balance</Button>
-        <Button onClick={() => account1.logout()}>logout</Button>
+        <Button onClick={() => account2.BALANCE()}>BALANCE</Button>
+        <Button onClick={() => account2.LOGOUT()}>LOGOUT</Button>
+      </div>
+      <div className="operation">
+        <Button onClick={() => account2.suspend()}>suspend</Button>
+        <Button onClick={() => account2.activate()}>activate</Button>
+        <Button onClick={() => account2.close()}>close</Button>
       </div>
     </div>
   );
