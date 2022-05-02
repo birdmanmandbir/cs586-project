@@ -49,6 +49,11 @@ export default function Account1Panel() {
         <Button onClick={() => account1.open(p, y, a)}>open</Button>
       </div>
       <div className="operation">
+        <span>Login: </span>
+        <Input value={y} onChange={(e) => setY(Number(e.target.value))}></Input>
+        <Button onClick={() => account1.login(y)}>login</Button>
+      </div>
+      <div className="operation">
         <span>Provides pin: </span>
         <Input value={x} onChange={(e) => setX(Number(e.target.value))}></Input>
         <Button onClick={() => account1.pin(x)}>pin</Button>

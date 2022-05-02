@@ -1,7 +1,7 @@
 import { DataStore } from "../DataStore";
 
 export class StoreData{
-  StoreData() {}
+  StoreData(ds: DataStore) {}
 }
 export class PromptForPIN{
   PromptForPIN() {}
@@ -28,10 +28,10 @@ export class TooManyAttemptsMsg{
   TooManyAttemptsMsg() {}
 }
 export class MakeDeposit{
-  MakeDeposit() {}
+  MakeDeposit(ds: DataStore) {}
 }
 export class MakeWithdraw{
-  MakeWithdraw() {}
+  MakeWithdraw(ds: DataStore) {}
 }
 export class NoFundsMsg{
   NoFundsMsg() {}

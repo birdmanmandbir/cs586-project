@@ -9,7 +9,7 @@ export class OP {
   }
   StoreData() {
     const storeData = this.af.createStoreData();
-    storeData.StoreData();
+    storeData.StoreData(this.ds);
   }
   PromptForPIN() {
     const promptForPIN = this.af.createPromptForPIN();
@@ -45,11 +45,11 @@ export class OP {
   }
   MakeDeposit() {
     const makeDeposit = this.af.createMakeDeposit();
-    makeDeposit.MakeDeposit();
+    makeDeposit.MakeDeposit(this.ds);
   }
   MakeWithdraw() {
     const makeWithdraw = this.af.createMakeWithdraw();
-    makeWithdraw.MakeWithdraw();
+    makeWithdraw.MakeWithdraw(this.ds);
   }
   NoFundsMsg() {
     const noFundsMsg = this.af.createNoFundsMsg();

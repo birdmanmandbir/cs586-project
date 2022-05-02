@@ -7,6 +7,11 @@ export interface DataStore{
   balance: number // balance
   p: number // pin
   id: number // user id  
+  setPin: () => void
+  setBalance: () => void
+  setId: () => void
+  makeDeposit: () => void
+  makeWithdraw: () => void
 }
 export class DS1 implements DataStore{
   temp_p: number // provides pin
@@ -17,6 +22,21 @@ export class DS1 implements DataStore{
   balance: number // balance
   p: number // pin
   id: number // user id
+  setPin() {
+    this.p = this.temp_p;
+  }
+  setBalance() {
+    this.balance = this.temp_a;
+  }
+  setId() {
+    this.id = this.temp_y;
+  }
+  makeDeposit() {
+    this.balance = this.balance + this.temp_d;
+  }
+  makeWithdraw() {
+    this.balance = this.balance - this.temp_w;
+  }
 }
 export class DS2 implements DataStore {
   temp_p: number // provides pin
@@ -27,4 +47,19 @@ export class DS2 implements DataStore {
   balance: number // balance
   p: number // pin
   id: number // user id
+  setPin() {
+    this.p = this.temp_p;
+  }
+  setBalance() {
+    this.balance = this.temp_a;
+  }
+  setId() {
+    this.id = this.temp_y;
+  }
+  makeDeposit() {
+    this.balance = this.balance + this.temp_d;
+  }
+  makeWithdraw() {
+    this.balance = this.balance - this.temp_w;
+  }
 }

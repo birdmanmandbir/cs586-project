@@ -4,5 +4,12 @@ import { defineConfig } from '@midwayjs/hooks-kit';
 export default defineConfig({
   vite: {
     plugins: [react()],
+    css: {
+      preprocessorOptions: {
+        less: {
+          javascriptEnabled: true,
+        }
+      }
+    }
   },
 });
