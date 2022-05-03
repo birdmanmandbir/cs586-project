@@ -59,6 +59,7 @@ export default function Account2Panel() {
         <span>Login: </span>
         <Input value={yy} onChange={(e) => setYY(Number(e.target.value))}></Input>
         <Button onClick={() => account2.LOGIN(yy)}>LOGIN</Button>
+        <Button onClick={() => account2.LOGOUT()}>LOGOUT</Button>
       </div>
       <div className="operation">
         <span>Provides pin: </span>
@@ -77,7 +78,6 @@ export default function Account2Panel() {
       </div>
       <div className="operation">
         <Button onClick={() => account2.BALANCE()}>BALANCE</Button>
-        <Button onClick={() => account2.LOGOUT()}>LOGOUT</Button>
       </div>
       <div className="operation">
         <Button onClick={() => account2.suspend()}>suspend</Button>

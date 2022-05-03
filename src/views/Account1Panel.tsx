@@ -59,6 +59,7 @@ export default function Account1Panel() {
         <span>Login: </span>
         <Input value={yy} onChange={(e) => setYY(Number(e.target.value))}></Input>
         <Button onClick={() => account1.login(yy)}>login</Button>
+        <Button onClick={() => account1.logout()}>logout</Button>
       </div>
       <div className="operation">
         <span>Provides pin: </span>
@@ -79,7 +80,6 @@ export default function Account1Panel() {
       </div>
       <div className="operation">
         <Button onClick={() => account1.balance()}>balance</Button>
-        <Button onClick={() => account1.logout()}>logout</Button>
       </div>
     </div>
   );
