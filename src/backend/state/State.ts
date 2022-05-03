@@ -2,6 +2,7 @@ import { MDAEFSM } from '../MdaEfsm';
 
 export class State {
   m: MDAEFSM;
+  name: string
   constructor(m: MDAEFSM) {
     this.m = m;
   }
@@ -27,12 +28,14 @@ export class State {
   Close() {}
 }
 export class start extends State {
+  name = 'start'
   Open() {
     this.m.op.StoreData();
     this.m.setState(this.m.idle);
   }
 }
 export class idle extends State {
+  name = 'idle'
   Login() {
     this.m.op.PromptForPIN();
     this.m.setState(this.m.check_pin);
@@ -42,6 +45,7 @@ export class idle extends State {
   }
 }
 export class check_pin extends State {
+  name = 'check_pin'
   IncorrectPIN(max: number) {
     if (this.m.attempts === max) {
       this.m.op.IncorrectPinMsg();
@@ -65,6 +69,7 @@ export class check_pin extends State {
   }
 }
 export class ready extends State {
+  name = 'ready'
   Logout() {
     this.m.setState(this.m.idle);
   }
@@ -93,6 +98,7 @@ export class ready extends State {
   }
 }
 export class suspended extends State {
+  name = 'suspended'
   Activate() {
     this.m.setState(this.m.ready);
   }
@@ -104,6 +110,7 @@ export class suspended extends State {
   }
 }
 export class S1 extends State {
+  name = 'S1'
   AboveMinBalance() {
     this.m.setState(this.m.ready);
   }
@@ -113,6 +120,7 @@ export class S1 extends State {
   }
 }
 export class overdrawn extends State {
+  name = 'overdrawn'
   Lock() {
     this.m.setState(this.m.locked);
   }
@@ -134,6 +142,7 @@ export class overdrawn extends State {
   }
 }
 export class S2 extends State {
+  name = 'S2'
   AboveMinBalance() {
     this.m.setState(this.m.ready);
   }
@@ -142,6 +151,7 @@ export class S2 extends State {
   }
 }
 export class locked extends State {
+  name = 'locked'
   Unlock() {
     this.m.setState(this.m.S2);
   }
@@ -149,4 +159,6 @@ export class locked extends State {
     this.m.op.IncorrectUnlockMsg();
   }
 }
-export class closed extends State {}
+export class closed extends State {
+  name = 'closed'
+}

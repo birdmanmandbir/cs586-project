@@ -31,7 +31,7 @@ export default function Account1Panel() {
   return (
     <div className="account1-panel">
       <div className="header">
-        <span className="header-item">Current State: {s.constructor.name}</span>
+        <span className="header-item">Current State: {s.name}</span>
         <span className="header-item">Current Balance: {a}</span>
       </div>
       <div className="operation">

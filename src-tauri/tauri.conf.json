@@ -1,6 +1,6 @@
 {
   "package": {
-    "productName": "hooks-react-starter",
+    "productName": "CS586-Project-A20488353",
     "version": "0.1.0"
   },
   "build": {
@@ -51,9 +51,9 @@
     },
     "windows": [
       {
-        "title": "hooks-react-starter window",
-        "width": 800,
-        "height": 600,
+        "title": "CS586-Project-A20488353",
+        "width": 1368,
+        "height": 768,
         "resizable": true,
         "fullscreen": false
       }
