@@ -33,7 +33,7 @@ export class A2_PromptForPIN extends PromptForPIN {
 }
 export class A2_DisplayMenu extends DisplayMenu {
   DisplayMenu() {
-    message.info(`${name} - Menu is displayed`)
+    message.success(`${name} - Menu is displayed`)
   }
 }
 export class A2_DisplayBalance extends DisplayBalance {
