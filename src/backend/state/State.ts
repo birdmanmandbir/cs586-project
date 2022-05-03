@@ -89,7 +89,7 @@ export class ready extends State {
     this.m.setState(this.m.locked);
   }
   IncorrectLock() {
-    this.m.op.IncorrectPinMsg();
+    this.m.op.IncorrectLockMsg();
   }
 }
 export class suspended extends State {
@@ -117,7 +117,7 @@ export class overdrawn extends State {
     this.m.setState(this.m.locked);
   }
   IncorrectLock() {
-    this.m.op.IncorrectPinMsg();
+    this.m.op.IncorrectLockMsg();
   }
   Withdraw() {
     this.m.op.NoFundsMsg();
